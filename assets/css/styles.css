@@ -1,0 +1,163 @@
+* {
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(to bottom, #00BCD4 0%,#3F51B5 51%,#673AB7 100%);
+    font-size: 16px;
+    font-family: arial;
+}
+
+#tweets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    perspective: 120em;
+    transform-style: preserve-3d;
+    z-index: 100;
+}
+
+.tweet-hash {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    font-size: 2.2em;
+    color: rgba(255, 255, 255, .80);
+    text-align: right;
+    z-index: 300;
+}
+
+.twitter-logo {
+    width: 55em;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: .2;
+}
+
+.pagseguro-logo {
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    width: 18em;
+    height: 4.5em;
+    opacity: .81;
+    z-index: 300;
+    opacity: 0.8;
+    background-image: url(../img/pslogo.png);
+    background-size: cover;
+}
+
+.tweet-wrapper {
+    width: 50em;
+    height: 15em;
+    padding: 2em;
+    border: 2px solid rgba(0, 255, 251, 0.47);
+    display: flex;
+    align-items: center;
+    border-radius: 1em;
+    background: rgba(33, 150, 243, 0.51);
+    box-shadow: 0 0 8em 0.6em rgba(0, 0, 0, 0.27);
+    transition: .2s;
+    transform: translateZ(200em);
+    opacity: 0;
+    transform-origin: 32em 0;
+    animation: floating 2.3s ease-in-out infinite alternate;
+    justify-content: space-between;
+}
+
+.tweet-wrapper:before {
+    content: '';
+    position: absolute;
+    width: 49em;
+    height: 14em;
+    box-shadow: 0 0 8em 0.6em rgba(0, 207, 255, 0.7);
+    border-radius: 1em;
+    transform: translateZ(-225em);
+    left: .4em;
+    top: .4em;
+    animation: light .8s ease-in-out infinite alternate;
+}
+
+.tweet-user-img {
+    border-radius: 50%;
+    width: 11em;
+    height: 11em;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: rgba(255, 255, 255, .4);
+    background-size: cover;
+} .tweet-user-img img {
+    width: 100%;
+}
+
+.tweet-user-name {
+    font-size: 2.1em;
+    flex-shrink: 0;
+    color: #fff;
+}
+
+.tweet-user-screen {
+    color: rgba(255, 255, 255, .7);
+    font-size: .8em;
+}
+
+.tweet-content {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    flex-basis: 34em;
+    justify-content: space-between;
+}
+
+
+/* Animations */
+
+.anim-in {
+    opacity: 1;
+}
+    background: rgba(255, 255, 255, .3);
+
+.anim-out {
+    opacity: 0;
+}
+
+.anim-floating {
+    animation: floating 2.3s ease-in-out infinite alternate;
+}
+
+@keyframes floating {
+  from { 
+    transform: rotateY(20deg) rotateX(-5deg);
+  }
+  to { 
+    transform: rotateY(-20deg) rotateX(10deg);
+  }
+}
+
+@keyframes light {
+  from { 
+    box-shadow: 0 0 8em 0.6em rgba(0, 207, 255, 0.4);
+  }
+  to { 
+    box-shadow: 0 0 8em 0.6em rgba(0, 207, 255, 0.8);
+  }
+}

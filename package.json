@@ -1,0 +1,26 @@
+{
+  "name": "robotic-arm-twitter",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "SERIAL_PORT=/dev/ttyUSB0 node lib/index.js",
+    "start:debug": "DEBUG=serialport:main node lib/index.js",
+    "watch": "babel -w src --out-dir lib/"
+  },
+  "dependencies": {
+    "debug": "^2.6.8",
+    "emoji-js": "^3.2.2",
+    "express": "^4.15.3",
+    "lodash": "^4.17.4",
+    "node-tweet-stream": "^2.0.1",
+    "rxjs": "^5.4.2",
+    "serialport": "^5.0.0-beta7",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1"
+  }
+}

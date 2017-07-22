@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Robotic Arm</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <ul id="tweets">
+        <!--<li class="tweet-wrapper anim-in">-->
+            <!--<div class="tweet-user-img" style="background-image: url(https://pbs.twimg.com/profile_images/885880059625689089/W9JgFFvM_400x400.jpg)"></div>-->
+            <!--<div class="tweet-content">-->
+            <!--<div class="tweet-user-name">Letícia Feitosa <br> -->
+                <!--<span class="tweet-user-screen">@LeticiaaFeitosa</span>-->
+            <!--</div>-->
+            <!--<img src="assets/img/clap.png">-->
+            <!--</div>-->
+        <!--</li>-->
+    </ul>
+    <div class="tweet-hash">
+        #PagSeguro ou #TheDevConf + 
+        <img src="img/clap.png" width="10%" /> 
+        ou
+        <img src="img/coffee.png" width="10%" />
+    </div>
+    <img src="img/twitter.svg" class="twitter-logo"/>
+    <div class="pagseguro-logo"></div>
+
+    <script src="js/jquery.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/app.js"></script>
+
+    <script type="text/template" id="tweet">
+        <li class="tweet-wrapper">
+            <div class="tweet-user-img" style="background-image: url({||data.profile_image||})">
+            </div>
+            <div class="tweet-content">
+                <div class="tweet-user-name">{||data.user_name||} 
+                <br> 
+                <span class="tweet-user-screen">@{||data.screen_name||}</span>
+                </div>
+                <img src="img/{||data.emotion||}" />
+            </div>
+        </li>
+    </script>
+
+</body>
+</html>
